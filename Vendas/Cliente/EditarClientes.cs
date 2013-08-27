@@ -24,83 +24,44 @@ namespace Vendas.Cliente
 
         private void tsbtnAlterar_Click(object sender, EventArgs e)
         {
-            bool camposValidados = true;
-
             try
             {
-                SqlConnection Con = new SqlConnection(@"Data Source=(LocalDB)\v11.0;AttachDbFilename=C:\Users\Thiago\Desktop\Thiago\Coti\Manager\Vendas\Banco.mdf;Integrated Security=True");
-
-                string strConn = @"UPDATE Cliente SET Nome = @Nome, Endereco = @Endereco, Bairro = @Bairro,Estado = @Estado, 
-                                    Cep = @Cep, Telefone = @Telefone, Telefone2 = @Telefone2, Email = @Email, FlagInadiplente = @FlagInadiplente,
-                                    FlagAtiva = @FlagAtiva, Observacao = @Observacao, PCM = @PCM WHERE Id = @Id";
-
-                SqlCommand Cmd = new SqlCommand(strConn, Con);
+                PessoaDAL objPessoaDAL = new PessoaDAL();
+                PessoaDTO objPessoa = new PessoaDTO();
+                bool camposValidados = true;
 
                 #region Validações dos Campos
 
                 string verificarTel = mtbTelefone.Text.Replace("_", "").Replace("(", "").Replace(")", "").Replace("-", "").Trim();
 
-                if (!String.IsNullOrEmpty(txtNome.Text))
-                {
-                    Cmd.Parameters.AddWithValue("@Nome", txtNome.Text);
-                }
-                else
+                if (String.IsNullOrEmpty(txtNome.Text))
                 {
                     epErro.SetError(txtNome, "O campo Nome é obrigatório!");
                     camposValidados = false;
                 }
 
-                if (!String.IsNullOrEmpty(verificarTel))
-                {
-                    Cmd.Parameters.AddWithValue("@Telefone", mtbTelefone.Text);
-                }
-                else
+                if (String.IsNullOrEmpty(verificarTel))
                 {
                     epErro.SetError(mtbTelefone, "O campo Telefone é obrigatório!");
                     camposValidados = false;
                 }
 
-                if (cbInadiplente.Checked)
-                {
-                    Cmd.Parameters.AddWithValue("@FlagInadiplente", 1);
-                }
-                else
-                {
-                    Cmd.Parameters.AddWithValue("@FlagInadiplente", 0);
-                }
-
-                if (cbAtivo.Checked)
-                {
-                    Cmd.Parameters.AddWithValue("@FlagAtiva", 1);
-                }
-                else
-                {
-                    Cmd.Parameters.AddWithValue("@FlagAtiva", 0);
-                }
-
-                //Campos sem validação
-
-                Cmd.Parameters.AddWithValue("@Bairro", txtBairro.Text);
-                Cmd.Parameters.AddWithValue("@Estado", txtEstado.Text);
-                Cmd.Parameters.AddWithValue("@Endereco", txtEndereco.Text);
-                Cmd.Parameters.AddWithValue("@Cep", mtbCep.Text);
-                Cmd.Parameters.AddWithValue("@Telefone2", mtbTelefone2.Text);
-                Cmd.Parameters.AddWithValue("@Email", txtEmail.Text);
-                Cmd.Parameters.AddWithValue("@Observacao", txtObservacao.Text);
-                Cmd.Parameters.AddWithValue("@PCM", txtPCM.Text);
-
                 #endregion
 
                 if (camposValidados)
                 {
-                    Con.Open();
-                    Cmd.ExecuteNonQuery();
-                    Con.Close();
+                    TransferirCampos(objPessoa);
+                    objPessoaDAL.Update(objPessoa);
 
-                    MessageBox.Show("Registro Alterado com sucesso!", "Mensagem", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("Registro inserido com sucesso!", "Mensagem", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                     LimparCampos();
-                    txtEditar.Focus();
+                    txtNome.Focus();
+                }
+                else
+                {
+                    MessageBox.Show("Ops, ocorreram erros!\nPreencha os campos com o balãozinho vermelho e tente novamente",
+                        "Mensagem", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
             catch (Exception)
@@ -156,7 +117,7 @@ namespace Vendas.Cliente
 
                 if (cbCombo.Checked == false)
                 {
-                    if (txtEditar.Text == "".Trim() || txtEditar.Text.Replace(" ", "") == string.Empty)
+                    if (txtEditar.Text == "".Trim() || txtEditar.Text.Trim() == string.Empty)
                     {
                         MessageBox.Show("Prencha o campo de busca", "Mensagem", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                         return;
@@ -178,7 +139,7 @@ namespace Vendas.Cliente
                 }
                 else
                 {
-                    if (cmbPessoas.Text == "".Trim() || cmbPessoas.Text.Replace(" ", "") == string.Empty)
+                    if (cmbPessoas.Text == "".Trim() || cmbPessoas.Text.Trim() == string.Empty)
                     {
                         MessageBox.Show("Prencha o campo de busca", "Mensagem", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                         return;
@@ -244,15 +205,32 @@ namespace Vendas.Cliente
             mtbTelefone.Text = pessoa.Telefone;
             mtbTelefone2.Text = pessoa.Telefone2;
 
-            if (pessoa.FlagAtiva.ToString().Replace("True", "Sim") == "Sim")
+            if (pessoa.FlagAtiva)
                 cbAtivo.Checked = true;
             else
                 cbAtivo.Checked = false;
 
-            if (pessoa.FlagInadiplente.ToString().Replace("True", "Sim") == "Sim")
+            if (pessoa.FlagInadiplente)
                 cbInadiplente.Checked = true;
             else
-                cbInadiplente.Checked = false;
+                cbInadiplente.Checked = false;           
+        }
+
+        private void TransferirCampos(PessoaDTO pessoa)
+        {
+            pessoa.IdPessoa = Convert.ToInt32(txtId.Text);
+            pessoa.Nome = txtNome.Text;
+            pessoa.Endereco = txtEndereco.Text;
+            pessoa.Bairro = txtBairro.Text;
+            pessoa.Estado = txtEstado.Text;
+            pessoa.Cep = mtbCep.Text;
+            pessoa.Telefone = mtbTelefone.Text;
+            pessoa.Telefone2 = mtbTelefone2.Text;
+            pessoa.Email = txtEmail.Text;
+            pessoa.FlagInadiplente = cbInadiplente.Checked;
+            pessoa.FlagAtiva = cbAtivo.Checked;
+            pessoa.Observacao = txtObservacao.Text;
+            pessoa.PCM = txtPCM.Text;
 
         }
 

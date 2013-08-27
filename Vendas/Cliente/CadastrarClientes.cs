@@ -1,4 +1,6 @@
-﻿using System;
+﻿using DAL.Model;
+using DAL.Persistence;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -37,81 +39,34 @@ namespace Vendas.Cliente
 
         private void Gravar()
         {
-            //Crio uma variável booleana que irá verificar se os campos estão validados
-            bool camposValidados = true;
-
             try
             {
-                //Instancio a classe de conexão passando como parâmetro a string de conexão ao DataBase LibrarySystem
-                SqlConnection Con = new SqlConnection(@"Data Source=(LocalDB)\v11.0;AttachDbFilename=C:\Users\Thiago\Desktop\Thiago\Coti\Manager\Vendas\Banco.mdf;Integrated Security=True");
-
-                //Armazeno em uma variável do tipo string minha instrução SQL referente à inserção do registro,
-                //concatenando os valores parametrizados, referentes aos campos que serão preenchidos no form
-                string strConn = "INSERT INTO Cliente (Nome, Endereco, Bairro, Estado, Cep, Telefone, Telefone2, Email, FlagInadiplente ,FlagAtiva, Observacao, PCM)" +
-                                     "VALUES (@Nome, @Endereco, @Bairro, @Estado, @Cep, @Telefone, @Telefone2, @Email, @FlagInadiplente, @FlagAtiva, @Observacao, @PCM)";
-
-                SqlCommand Cmd = new SqlCommand(strConn, Con);
+                PessoaDAL objPessoaDAL = new PessoaDAL();
+                PessoaDTO objPessoa = new PessoaDTO();
+                bool camposValidados = true;
 
                 #region Validações dos Campos
 
                 string verificarTel = mtbTelefone.Text.Replace("_", "").Replace("(", "").Replace(")", "").Replace("-", "").Trim();
 
-                if (!String.IsNullOrEmpty(txtNome.Text))
-                {
-                    Cmd.Parameters.AddWithValue("@Nome", txtNome.Text);
-                }
-                else
+                if (String.IsNullOrEmpty(txtNome.Text))
                 {
                     epErro.SetError(txtNome, "O campo Nome é obrigatório!");
                     camposValidados = false;
                 }
 
-                if (!String.IsNullOrEmpty(verificarTel))
-                {
-                    Cmd.Parameters.AddWithValue("@Telefone", mtbTelefone.Text);
-                }
-                else
+                if (String.IsNullOrEmpty(verificarTel))
                 {
                     epErro.SetError(mtbTelefone, "O campo Telefone é obrigatório!");
                     camposValidados = false;
                 }
 
-                if (cbInadiplente.Checked)
-                {
-                    Cmd.Parameters.AddWithValue("@FlagInadiplente", 1);
-                }
-                else
-                {
-                    Cmd.Parameters.AddWithValue("@FlagInadiplente", 0);
-                }
-
-                if (cbAtivo.Checked)
-                {
-                    Cmd.Parameters.AddWithValue("@FlagAtiva", 1);
-                }
-                else
-                {
-                    Cmd.Parameters.AddWithValue("@FlagAtiva", 0);                
-                }
-
-                //Campos sem validação
-
-                Cmd.Parameters.AddWithValue("@Bairro", txtBairro.Text);
-                Cmd.Parameters.AddWithValue("@Estado", txtEstado.Text);
-                Cmd.Parameters.AddWithValue("@Endereco", txtEndereco.Text);
-                Cmd.Parameters.AddWithValue("@Cep", mtbCep.Text);
-                Cmd.Parameters.AddWithValue("@Telefone2", mtbTelefone2.Text);
-                Cmd.Parameters.AddWithValue("@Email", txtEmail.Text);
-                Cmd.Parameters.AddWithValue("@Observacao", txtObservacao.Text);
-                Cmd.Parameters.AddWithValue("@PCM", txtPCM.Text);
-
                 #endregion
 
                 if (camposValidados)
                 {
-                    Con.Open();
-                    Cmd.ExecuteNonQuery();
-                    Con.Close();
+                    TransferirCampos(objPessoa);
+                    objPessoaDAL.Insert(objPessoa);
 
                     MessageBox.Show("Registro inserido com sucesso!", "Mensagem", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
@@ -132,26 +87,35 @@ namespace Vendas.Cliente
 
         private void LimparCampos()
         {
-            try
-            {
-                mtbCep.Text = string.Empty;
-                mtbTelefone2.Text = string.Empty;
-                txtObservacao.Text = string.Empty;
-                txtEmail.Text = string.Empty;
-                txtNome.Text = string.Empty;
-                txtEndereco.Text = string.Empty;
-                txtBairro.Text = string.Empty;
-                txtEstado.Text = string.Empty;
-                mtbTelefone.Text = string.Empty;
-                cbInadiplente.Checked = false;
-                cbAtivo.Checked = false;
-                txtPCM.Text = string.Empty;
+            mtbCep.Text = string.Empty;
+            mtbTelefone2.Text = string.Empty;
+            txtObservacao.Text = string.Empty;
+            txtEmail.Text = string.Empty;
+            txtNome.Text = string.Empty;
+            txtEndereco.Text = string.Empty;
+            txtBairro.Text = string.Empty;
+            txtEstado.Text = string.Empty;
+            mtbTelefone.Text = string.Empty;
+            cbInadiplente.Checked = false;
+            cbAtivo.Checked = false;
+            txtPCM.Text = string.Empty;
+        }
 
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
+        private void TransferirCampos(PessoaDTO pessoa)
+        {
+            pessoa.Nome = txtNome.Text;
+            pessoa.Endereco = txtEndereco.Text;
+            pessoa.Bairro = txtBairro.Text;
+            pessoa.Estado = txtEstado.Text;
+            pessoa.Cep = mtbCep.Text;
+            pessoa.Telefone = mtbTelefone.Text;
+            pessoa.Telefone2 = mtbTelefone2.Text;
+            pessoa.Email = txtEmail.Text;
+            pessoa.FlagInadiplente = cbInadiplente.Checked;
+            pessoa.FlagAtiva = cbAtivo.Checked;
+            pessoa.Observacao = txtObservacao.Text;
+            pessoa.PCM = txtPCM.Text;
+
         }
 
         #endregion

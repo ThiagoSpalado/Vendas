@@ -23,3 +23,8 @@ T:\Thiago\Estudos\C#\Manager\DAL\bin\Debug\DAL.pdb
 T:\Thiago\Estudos\C#\Manager\DAL\obj\Debug\DAL.csprojResolveAssemblyReference.cache
 T:\Thiago\Estudos\C#\Manager\DAL\obj\Debug\DAL.dll
 T:\Thiago\Estudos\C#\Manager\DAL\obj\Debug\DAL.pdb
+C:\VtexGit\Vendas\DAL\bin\Debug\DAL.dll
+C:\VtexGit\Vendas\DAL\bin\Debug\DAL.pdb
+C:\VtexGit\Vendas\DAL\obj\Debug\DAL.csprojResolveAssemblyReference.cache
+C:\VtexGit\Vendas\DAL\obj\Debug\DAL.dll
+C:\VtexGit\Vendas\DAL\obj\Debug\DAL.pdb

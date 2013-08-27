@@ -44,7 +44,7 @@
             // 
             this.lblMensagem.AutoSize = true;
             this.lblMensagem.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblMensagem.Location = new System.Drawing.Point(29, 127);
+            this.lblMensagem.Location = new System.Drawing.Point(12, 128);
             this.lblMensagem.Name = "lblMensagem";
             this.lblMensagem.Size = new System.Drawing.Size(327, 22);
             this.lblMensagem.TabIndex = 5;
@@ -55,9 +55,9 @@
             this.toolStrip2.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.toolStrip2.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.tsbtnSair});
-            this.toolStrip2.Location = new System.Drawing.Point(0, 223);
+            this.toolStrip2.Location = new System.Drawing.Point(0, 203);
             this.toolStrip2.Name = "toolStrip2";
-            this.toolStrip2.Size = new System.Drawing.Size(379, 55);
+            this.toolStrip2.Size = new System.Drawing.Size(353, 55);
             this.toolStrip2.TabIndex = 4;
             this.toolStrip2.Text = "toolStrip2";
             // 
@@ -80,7 +80,7 @@
             this.tsbVendas});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(379, 69);
+            this.toolStrip1.Size = new System.Drawing.Size(353, 69);
             this.toolStrip1.TabIndex = 3;
             this.toolStrip1.Text = "toolStrip1";
             // 
@@ -118,7 +118,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(379, 278);
+            this.ClientSize = new System.Drawing.Size(353, 258);
             this.ControlBox = false;
             this.Controls.Add(this.lblMensagem);
             this.Controls.Add(this.toolStrip2);
@@ -126,7 +126,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "Principal";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Vendas Beta v1.1";
+            this.Text = "Eco 1.0";
             this.toolStrip2.ResumeLayout(false);
             this.toolStrip2.PerformLayout();
             this.toolStrip1.ResumeLayout(false);

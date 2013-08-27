@@ -11,13 +11,13 @@ namespace DAL.Persistence
 {
     public class PessoaDAL : DAL
     {
-        public bool Salvar(PessoaDTO pessoa)
+        public bool Insert(PessoaDTO pessoa)
         {
             try
             {
                 OpenConnection();
 
-                string strConn = "INSERT INTO Pessoa (Nome, Endereco, Bairro, Estado, Cep, Telefone, Telefone2, Email, Observacao, FlagAtiva, FlagInadiplente)" +
+                string strConn = "INSERT INTO Cliente (Nome, Endereco, Bairro, Estado, Cep, Telefone, Telefone2, Email, Observacao, FlagAtiva, FlagInadiplente)" +
                                      "VALUES (@Nome, @Endereco, @Bairro, @Estado, @Cep, @Telefone, @Telefone2, @Email, @Observacao, @FlagAtiva, @FlagInadiplente)";
 
                 Cmd = new SqlCommand(strConn, Con);
@@ -42,26 +42,18 @@ namespace DAL.Persistence
             }
         }
 
-        public void ExcluirEditar(PessoaDTO pessoa, string opcao)
+        public void Update(PessoaDTO pessoa)
         {
             try
             {
                 OpenConnection();
 
-                string strConn = "";
-
-                if (opcao.ToLower() == "editar")
-                {
-                    strConn = @"UPDATE Pessoa set Nome = @Nome, Endereco = @Endereco, Bairro = @Bairro, Estado = @Estado, Cep = @Cep, FlagInadiplente = @FlagInadiplente,
+                string strCon = @"UPDATE Cliente set Nome = @Nome, Endereco = @Endereco, Bairro = @Bairro, Estado = @Estado, Cep = @Cep, FlagInadiplente = @FlagInadiplente,
                                     Telefone = @Telefone, Telefone2 = @Telefone2, Email = @Email, Observacao = @Observacao, FlagAtiva = @FlagAtiva
                                     WHERE Id = @Id";
-                }
-                else
-                {
-                    strConn = @"DELETE from Pessoa WHERE Id = @Id";
-                }
 
-                Cmd = new SqlCommand(strConn, Con);
+
+                Cmd = new SqlCommand(strCon, Con);
 
                 Cmd.Parameters.AddWithValue("@Id", pessoa.IdPessoa);
                 Cmd.Parameters.AddWithValue("@Nome", pessoa.Nome);
@@ -182,12 +174,13 @@ namespace DAL.Persistence
                 CloseConnection();
             }
         }
+
         public PessoaDTO GetById(string id)
         {
             try
             {
                 OpenConnection();
-                PessoaDTO objCliente= new PessoaDTO();
+                PessoaDTO objCliente = new PessoaDTO();
 
                 string strConn = @"SELECT * from Cliente where id = @id";
 
@@ -222,5 +215,6 @@ namespace DAL.Persistence
                 CloseConnection();
             }
         }
+
     }
 }
