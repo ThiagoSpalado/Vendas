@@ -1,0 +1,120 @@
+C:\Users\Thiago\Documents\Visual Studio 2012\Projects\Manager\SAVE\bin\Debug\SAVE.exe.config
+C:\Users\Thiago\Documents\Visual Studio 2012\Projects\Manager\SAVE\bin\Debug\SAVE.exe
+C:\Users\Thiago\Documents\Visual Studio 2012\Projects\Manager\SAVE\bin\Debug\SAVE.pdb
+C:\Users\Thiago\Documents\Visual Studio 2012\Projects\Manager\SAVE\obj\Debug\SAVE.csprojResolveAssemblyReference.cache
+C:\Users\Thiago\Documents\Visual Studio 2012\Projects\Manager\SAVE\obj\Debug\SAVE.Properties.Resources.resources
+C:\Users\Thiago\Documents\Visual Studio 2012\Projects\Manager\SAVE\obj\Debug\SAVE.csproj.GenerateResource.Cache
+C:\Users\Thiago\Documents\Visual Studio 2012\Projects\Manager\SAVE\obj\Debug\SAVE.exe
+C:\Users\Thiago\Documents\Visual Studio 2012\Projects\Manager\SAVE\obj\Debug\SAVE.pdb
+C:\Users\Thiago\Documents\Visual Studio 2012\Projects\Manager\SAVE\obj\Debug\SAVE.Principal.resources
+C:\Users\Thiago\Documents\Visual Studio 2012\Projects\Manager\SAVE\obj\Debug\SAVE.Cliente.ConsultarClientes.resources
+C:\Users\Thiago\Documents\Visual Studio 2012\Projects\Manager\SAVE\obj\Debug\SAVE.Cliente.EditarClientes.resources
+C:\Users\Thiago\Documents\Visual Studio 2012\Projects\Manager\SAVE\obj\Debug\SAVE.Cliente.Principal_Clientes.resources
+C:\Users\Thiago\Documents\Visual Studio 2012\Projects\Manager\SAVE\obj\Debug\SAVE.Cliente.CadastrarCliente.resources
+C:\Users\Thiago\Documents\Visual Studio 2012\Projects\Manager\SAVE\obj\Debug\SAVE.Produto.EditarProduto.resources
+C:\Users\Thiago\Documents\Visual Studio 2012\Projects\Manager\SAVE\obj\Debug\SAVE.Produto.Principal_Produto.resources
+C:\Users\Thiago\Documents\Visual Studio 2012\Projects\Manager\SAVE\obj\Debug\SAVE.Produto.CadastrarProduto.resources
+C:\Users\Thiago\Documents\Visual Studio 2012\Projects\Manager\SAVE\obj\Debug\SAVE.Produto.ConsultarProduto.resources
+C:\Users\Thiago\Documents\Visual Studio 2012\Projects\Manager\SAVE\obj\Debug\SAVE.Venda.CadastrarVendas.resources
+C:\Users\Thiago\Documents\Visual Studio 2012\Projects\Manager\SAVE\obj\Debug\SAVE.Venda.ConsultarVendas.resources
+C:\Users\Thiago\Documents\Visual Studio 2012\Projects\Manager\SAVE\obj\Debug\SAVE.Venda.Vendas_Principal.resources
+C:\Users\Thiago\Documents\Visual Studio 2012\Projects\Manager\SAVE\bin\Debug\Banco.mdf
+C:\Users\Thiago\Documents\Visual Studio 2012\Projects\Manager\SAVE\bin\Debug\Banco_log.ldf
+C:\Users\Thiago\Documents\Visual Studio 2012\Projects\Manager\SAVE\bin\Debug\DAL.dll
+C:\Users\Thiago\Documents\Visual Studio 2012\Projects\Manager\SAVE\bin\Debug\DAL.pdb
+C:\Users\vanda\Desktop\Save\Manager\SAVE\bin\Debug\SAVE.exe.config
+C:\Users\vanda\Desktop\Save\Manager\SAVE\obj\Debug\SAVE.exe
+C:\Users\vanda\Desktop\Save\Manager\SAVE\obj\Debug\SAVE.pdb
+C:\Users\vanda\Desktop\Save\Manager\SAVE\bin\Debug\Banco.mdf
+C:\Users\vanda\Desktop\Save\Manager\SAVE\bin\Debug\Banco_log.ldf
+C:\Users\vanda\Desktop\Save\Manager\SAVE\bin\Debug\SAVE.exe
+C:\Users\vanda\Desktop\Save\Manager\SAVE\bin\Debug\SAVE.pdb
+C:\Users\vanda\Desktop\Save\Manager\SAVE\bin\Debug\DAL.dll
+C:\Users\vanda\Desktop\Save\Manager\SAVE\bin\Debug\DAL.pdb
+C:\Users\vanda\Desktop\Save\Manager\SAVE\obj\Debug\SAVE.csprojResolveAssemblyReference.cache
+C:\Users\vanda\Desktop\Save\Manager\SAVE\obj\Debug\SAVE.Cliente.CadastrarCliente.resources
+C:\Users\vanda\Desktop\Save\Manager\SAVE\obj\Debug\SAVE.Cliente.ConsultarClientes.resources
+C:\Users\vanda\Desktop\Save\Manager\SAVE\obj\Debug\SAVE.Cliente.EditarClientes.resources
+C:\Users\vanda\Desktop\Save\Manager\SAVE\obj\Debug\SAVE.Cliente.Principal_Clientes.resources
+C:\Users\vanda\Desktop\Save\Manager\SAVE\obj\Debug\SAVE.Principal.resources
+C:\Users\vanda\Desktop\Save\Manager\SAVE\obj\Debug\SAVE.Produto.CadastrarProduto.resources
+C:\Users\vanda\Desktop\Save\Manager\SAVE\obj\Debug\SAVE.Produto.ConsultarProduto.resources
+C:\Users\vanda\Desktop\Save\Manager\SAVE\obj\Debug\SAVE.Produto.EditarProduto.resources
+C:\Users\vanda\Desktop\Save\Manager\SAVE\obj\Debug\SAVE.Produto.Principal_Produto.resources
+C:\Users\vanda\Desktop\Save\Manager\SAVE\obj\Debug\SAVE.Properties.Resources.resources
+C:\Users\vanda\Desktop\Save\Manager\SAVE\obj\Debug\SAVE.Venda.CadastrarVendas.resources
+C:\Users\vanda\Desktop\Save\Manager\SAVE\obj\Debug\SAVE.Venda.ConsultarVendas.resources
+C:\Users\vanda\Desktop\Save\Manager\SAVE\obj\Debug\SAVE.Venda.Vendas_Principal.resources
+C:\Users\vanda\Desktop\Save\Manager\SAVE\obj\Debug\SAVE.csproj.GenerateResource.Cache
+C:\Users\Thiago\Desktop\Thiago\Coti\Manager\SAVE\bin\Debug\SAVE.exe.config
+C:\Users\Thiago\Desktop\Thiago\Coti\Manager\SAVE\obj\Debug\SAVE.exe
+C:\Users\Thiago\Desktop\Thiago\Coti\Manager\SAVE\obj\Debug\SAVE.pdb
+C:\Users\Thiago\Desktop\Thiago\Coti\Manager\SAVE\bin\Debug\Banco.mdf
+C:\Users\Thiago\Desktop\Thiago\Coti\Manager\SAVE\bin\Debug\Banco_log.ldf
+C:\Users\Thiago\Desktop\Thiago\Coti\Manager\SAVE\bin\Debug\SAVE.exe
+C:\Users\Thiago\Desktop\Thiago\Coti\Manager\SAVE\bin\Debug\SAVE.pdb
+C:\Users\Thiago\Desktop\Thiago\Coti\Manager\SAVE\bin\Debug\DAL.dll
+C:\Users\Thiago\Desktop\Thiago\Coti\Manager\SAVE\bin\Debug\DAL.pdb
+C:\Users\Thiago\Desktop\Thiago\Coti\Manager\SAVE\obj\Debug\SAVE.csprojResolveAssemblyReference.cache
+C:\Users\Thiago\Desktop\Thiago\Coti\Manager\SAVE\obj\Debug\SAVE.Cliente.CadastrarCliente.resources
+C:\Users\Thiago\Desktop\Thiago\Coti\Manager\SAVE\obj\Debug\SAVE.Cliente.ConsultarClientes.resources
+C:\Users\Thiago\Desktop\Thiago\Coti\Manager\SAVE\obj\Debug\SAVE.Cliente.EditarClientes.resources
+C:\Users\Thiago\Desktop\Thiago\Coti\Manager\SAVE\obj\Debug\SAVE.Cliente.Principal_Clientes.resources
+C:\Users\Thiago\Desktop\Thiago\Coti\Manager\SAVE\obj\Debug\SAVE.Principal.resources
+C:\Users\Thiago\Desktop\Thiago\Coti\Manager\SAVE\obj\Debug\SAVE.Produto.CadastrarProduto.resources
+C:\Users\Thiago\Desktop\Thiago\Coti\Manager\SAVE\obj\Debug\SAVE.Produto.ConsultarProduto.resources
+C:\Users\Thiago\Desktop\Thiago\Coti\Manager\SAVE\obj\Debug\SAVE.Produto.EditarProduto.resources
+C:\Users\Thiago\Desktop\Thiago\Coti\Manager\SAVE\obj\Debug\SAVE.Produto.Principal_Produto.resources
+C:\Users\Thiago\Desktop\Thiago\Coti\Manager\SAVE\obj\Debug\SAVE.Properties.Resources.resources
+C:\Users\Thiago\Desktop\Thiago\Coti\Manager\SAVE\obj\Debug\SAVE.Venda.CadastrarVendas.resources
+C:\Users\Thiago\Desktop\Thiago\Coti\Manager\SAVE\obj\Debug\SAVE.Venda.ConsultarVendas.resources
+C:\Users\Thiago\Desktop\Thiago\Coti\Manager\SAVE\obj\Debug\SAVE.Venda.Vendas_Principal.resources
+C:\Users\Thiago\Desktop\Thiago\Coti\Manager\SAVE\obj\Debug\SAVE.csproj.GenerateResource.Cache
+C:\Manager\SAVE\bin\Debug\SAVE.exe.config
+C:\Manager\SAVE\obj\Debug\SAVE.exe
+C:\Manager\SAVE\obj\Debug\SAVE.pdb
+C:\Manager\SAVE\bin\Debug\Banco.mdf
+C:\Manager\SAVE\bin\Debug\Banco_log.ldf
+C:\Manager\SAVE\bin\Debug\SAVE.exe
+C:\Manager\SAVE\bin\Debug\SAVE.pdb
+C:\Manager\SAVE\bin\Debug\DAL.dll
+C:\Manager\SAVE\bin\Debug\DAL.pdb
+C:\Manager\SAVE\obj\Debug\SAVE.csprojResolveAssemblyReference.cache
+C:\Manager\SAVE\obj\Debug\SAVE.Cliente.CadastrarCliente.resources
+C:\Manager\SAVE\obj\Debug\SAVE.Cliente.ConsultarClientes.resources
+C:\Manager\SAVE\obj\Debug\SAVE.Cliente.EditarClientes.resources
+C:\Manager\SAVE\obj\Debug\SAVE.Cliente.Principal_Clientes.resources
+C:\Manager\SAVE\obj\Debug\SAVE.Principal.resources
+C:\Manager\SAVE\obj\Debug\SAVE.Produto.CadastrarProduto.resources
+C:\Manager\SAVE\obj\Debug\SAVE.Produto.ConsultarProduto.resources
+C:\Manager\SAVE\obj\Debug\SAVE.Produto.EditarProduto.resources
+C:\Manager\SAVE\obj\Debug\SAVE.Produto.Principal_Produto.resources
+C:\Manager\SAVE\obj\Debug\SAVE.Properties.Resources.resources
+C:\Manager\SAVE\obj\Debug\SAVE.Venda.CadastrarVendas.resources
+C:\Manager\SAVE\obj\Debug\SAVE.Venda.ConsultarVendas.resources
+C:\Manager\SAVE\obj\Debug\SAVE.Venda.Vendas_Principal.resources
+C:\Manager\SAVE\obj\Debug\SAVE.csproj.GenerateResource.Cache
+T:\Thiago\Estudos\C#\Manager\SAVE\bin\Debug\SAVE.exe.config
+T:\Thiago\Estudos\C#\Manager\SAVE\obj\Debug\SAVE.exe
+T:\Thiago\Estudos\C#\Manager\SAVE\obj\Debug\SAVE.pdb
+T:\Thiago\Estudos\C#\Manager\SAVE\bin\Debug\Banco.mdf
+T:\Thiago\Estudos\C#\Manager\SAVE\bin\Debug\Banco_log.ldf
+T:\Thiago\Estudos\C#\Manager\SAVE\bin\Debug\SAVE.exe
+T:\Thiago\Estudos\C#\Manager\SAVE\bin\Debug\SAVE.pdb
+T:\Thiago\Estudos\C#\Manager\SAVE\bin\Debug\DAL.dll
+T:\Thiago\Estudos\C#\Manager\SAVE\bin\Debug\DAL.pdb
+T:\Thiago\Estudos\C#\Manager\SAVE\obj\Debug\SAVE.csprojResolveAssemblyReference.cache
+T:\Thiago\Estudos\C#\Manager\SAVE\obj\Debug\SAVE.Cliente.CadastrarCliente.resources
+T:\Thiago\Estudos\C#\Manager\SAVE\obj\Debug\SAVE.Cliente.ConsultarClientes.resources
+T:\Thiago\Estudos\C#\Manager\SAVE\obj\Debug\SAVE.Cliente.EditarClientes.resources
+T:\Thiago\Estudos\C#\Manager\SAVE\obj\Debug\SAVE.Cliente.Principal_Clientes.resources
+T:\Thiago\Estudos\C#\Manager\SAVE\obj\Debug\SAVE.Principal.resources
+T:\Thiago\Estudos\C#\Manager\SAVE\obj\Debug\SAVE.Produto.CadastrarProduto.resources
+T:\Thiago\Estudos\C#\Manager\SAVE\obj\Debug\SAVE.Produto.ConsultarProduto.resources
+T:\Thiago\Estudos\C#\Manager\SAVE\obj\Debug\SAVE.Produto.EditarProduto.resources
+T:\Thiago\Estudos\C#\Manager\SAVE\obj\Debug\SAVE.Produto.Principal_Produto.resources
+T:\Thiago\Estudos\C#\Manager\SAVE\obj\Debug\SAVE.Properties.Resources.resources
+T:\Thiago\Estudos\C#\Manager\SAVE\obj\Debug\SAVE.Venda.CadastrarVendas.resources
+T:\Thiago\Estudos\C#\Manager\SAVE\obj\Debug\SAVE.Venda.ConsultarVendas.resources
+T:\Thiago\Estudos\C#\Manager\SAVE\obj\Debug\SAVE.Venda.Vendas_Principal.resources
+T:\Thiago\Estudos\C#\Manager\SAVE\obj\Debug\SAVE.csproj.GenerateResource.Cache

@@ -1,0 +1,25 @@
+C:\Users\Thiago\Documents\Visual Studio 2012\Projects\Manager\DAL\bin\Debug\DAL.dll
+C:\Users\Thiago\Documents\Visual Studio 2012\Projects\Manager\DAL\bin\Debug\DAL.pdb
+C:\Users\Thiago\Documents\Visual Studio 2012\Projects\Manager\DAL\obj\Debug\DAL.csprojResolveAssemblyReference.cache
+C:\Users\Thiago\Documents\Visual Studio 2012\Projects\Manager\DAL\obj\Debug\DAL.dll
+C:\Users\Thiago\Documents\Visual Studio 2012\Projects\Manager\DAL\obj\Debug\DAL.pdb
+C:\Users\vanda\Desktop\Save\Manager\DAL\bin\Debug\DAL.dll
+C:\Users\vanda\Desktop\Save\Manager\DAL\bin\Debug\DAL.pdb
+C:\Users\vanda\Desktop\Save\Manager\DAL\obj\Debug\DAL.csprojResolveAssemblyReference.cache
+C:\Users\vanda\Desktop\Save\Manager\DAL\obj\Debug\DAL.dll
+C:\Users\vanda\Desktop\Save\Manager\DAL\obj\Debug\DAL.pdb
+C:\Users\Thiago\Desktop\Thiago\Coti\Manager\DAL\bin\Debug\DAL.dll
+C:\Users\Thiago\Desktop\Thiago\Coti\Manager\DAL\bin\Debug\DAL.pdb
+C:\Users\Thiago\Desktop\Thiago\Coti\Manager\DAL\obj\Debug\DAL.csprojResolveAssemblyReference.cache
+C:\Users\Thiago\Desktop\Thiago\Coti\Manager\DAL\obj\Debug\DAL.dll
+C:\Users\Thiago\Desktop\Thiago\Coti\Manager\DAL\obj\Debug\DAL.pdb
+C:\Manager\DAL\bin\Debug\DAL.dll
+C:\Manager\DAL\bin\Debug\DAL.pdb
+C:\Manager\DAL\obj\Debug\DAL.csprojResolveAssemblyReference.cache
+C:\Manager\DAL\obj\Debug\DAL.dll
+C:\Manager\DAL\obj\Debug\DAL.pdb
+T:\Thiago\Estudos\C#\Manager\DAL\bin\Debug\DAL.dll
+T:\Thiago\Estudos\C#\Manager\DAL\bin\Debug\DAL.pdb
+T:\Thiago\Estudos\C#\Manager\DAL\obj\Debug\DAL.csprojResolveAssemblyReference.cache
+T:\Thiago\Estudos\C#\Manager\DAL\obj\Debug\DAL.dll
+T:\Thiago\Estudos\C#\Manager\DAL\obj\Debug\DAL.pdb

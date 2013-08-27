@@ -1,0 +1,112 @@
+CREATE TABLE Compra (IdCompra int PRIMARY KEY IDENTITY,
+IdCliente int not null foreign key(IdCliente) references Cliente(Idcliente),
+Data nvarchar(30) null,
+Total nvarchar(15) NOT NULL,
+CodReferencia nvarchar(50) not null,
+[Status] nvarchar(50) null
+);
+
+CREATE TABLE Produto (IdProduto int PRIMARY KEY IDENTITY ,
+Nome nVARCHAR(80)  NOT NULL,
+Preco nVARCHAR(10)  NOT NULL,
+Quantidade INT  NOT NULL,
+Tipo nVARCHAR(50)  NOT NULL,
+[Status] bit  NULL
+);
+
+
+CREATE TABLE CompraProduto (IdCompraProduto int PRIMARY KEY IDENTITY ,
+IdProduto int not null foreign key(IdProduto) references Produto(IdProduto),
+IdCliente int not null foreign key(IdCliente) references Cliente(IdCliente),
+CodReferencia nvarchar(50) not null, 
+Quantidade int not null
+);
+
+CREATE TABLE Cliente (IdCliente int PRIMARY KEY IDENTITY,
+Nome nvaRCHAR(100)  NOT NULL,
+Endereco nVARCHAR(50)  NULL,
+Bairro nVARCHAR(20)  NULL,
+Estado nvarCHAR(30)  NULL,
+Cep nVARCHAR(20)  NULL,
+Telefone nVARCHAR(20)  NOT NULL,
+Celular nVARCHAR(20)  NULL,
+Email nvARCHAR(100)  NULL,
+Inadiplente bit  NULL,
+[Status] bit null,
+Observacao NVARCHAR(150)  NULL,
+PCM nVARCHAR(100)  NULL
+);
+
+CREATE TABLE Seminario (IdSeminario int PRIMARY KEY IDENTITY,
+Data nVARCHAR(15)  NOT NULL,
+Tema nVARCHAR(50)  NOT NULL,
+Pregador nVARCHAR(50)  NOT NULL,
+Nome nVARCHAR(100)  NOT NULL
+);
+
+
+ - ViewClienteProduto
+
+SELECT     dbo.Compra.IdCompra, dbo.Cliente.Nome AS cliente, dbo.Compra.Data, dbo.Compra.Total, dbo.Compra.Status, dbo.Compra.IdCliente
+
+
+ - ViewVenda
+
+SELECT     dbo.Produto.Nome, dbo.Produto.Tipo, dbo.CompraProduto.Quantidade, dbo.Produto.Preco, dbo.Compra.IdCompra, dbo.Compra.IdCliente
+FROM         dbo.CompraProduto INNER JOIN
+             dbo.Produto ON dbo.Produto.IdProduto = dbo.CompraProduto.IdProduto INNER JOIN
+             dbo.Compra ON dbo.Compra.CodReferencia = dbo.CompraProduto.CodReferencia INNER JOIN
+             dbo.Cliente ON dbo.Compra.IdCliente = dbo.Cliente.IdCliente
+
+ Querys
+ 
+ ViewVenda
+ 
+FillById    
+- SELECT Nome, Tipo, Quantidade, Preco, IdCompra FROM dbo.ViewVenda
+where IdCompra = @Id
+
+
+ViewClienteProduto
+
+FillByData
+ - SELECT IdCompra, cliente, Data, Total, Status, IdCliente FROM dbo.ViewClienteProduto
+WHERE (Data LIKE '%' + @Data  + '%') order by idcompra desc
+
+FillByName
+ - SELECT IdCompra, cliente, Data, Total, Status, IdCliente FROM dbo.ViewClienteProduto
+WHERE (cliente LIKE '%' + @cliente + '%') order by idcompra desc
+
+
+ Cliente
+
+FillById
+- SELECT IdCliente, Nome, Endereco, Bairro, Estado, Cep, Telefone, Celular, Email, Inadiplente, Status, Observacao, PCM FROM dbo.Cliente
+
+FillByName 
+- SELECT        IdCliente, Nome, Endereco, Bairro, Estado,Telefone,Status, Inadiplente,Cep,Celular, Observacao,
+Email, PCM 
+FROM            Cliente
+WHERE        (Nome LIKE '%' + @Nome + '%')
+
+FillByNameAndAtivo 
+- SELECT        IdCliente, Nome, Endereco, Bairro, Estado,Telefone,Status, Inadiplente,Cep,Celular, Observacao,
+Email, PCM 
+FROM            Cliente
+WHERE        (Nome LIKE '%' + @Nome + '%') and status = 1
+
+
+Produto
+
+FillByAtivo
+ - SELECT [IdProduto], [Nome], [Preco], [Quantidade], [Tipo], [Status] FROM [Produto] where   (Status = 1)
+ 
+FillById
+  - SELECT * FROM dbo.Produto where idProduto = @Id
+  
+FillByInativo
+ - SELECT [IdProduto], [Nome], [Preco], [Quantidade], [Tipo], [Status] FROM [Produto] where   (Status = 0)
+ 
+ FillByNome
+  - SELECT  top(1) * FROM            Produto
+WHERE        (Nome LIKE '%' + @Nome + '%')
