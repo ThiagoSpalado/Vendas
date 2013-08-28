@@ -30,7 +30,7 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(EditarProduto));
-            this.cbAtivo = new System.Windows.Forms.CheckBox();
+            this.cbStatus = new System.Windows.Forms.CheckBox();
             this.btnConsultar = new System.Windows.Forms.Button();
             this.txtEditar = new System.Windows.Forms.TextBox();
             this.gpbOpcoes = new System.Windows.Forms.GroupBox();
@@ -48,24 +48,24 @@
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.tsbtnAlterar = new System.Windows.Forms.ToolStripButton();
             this.tsbtnVoltar = new System.Windows.Forms.ToolStripButton();
-            this.errorPro = new System.Windows.Forms.ErrorProvider(this.components);
+            this.epErro = new System.Windows.Forms.ErrorProvider(this.components);
             this.cbCombo = new System.Windows.Forms.CheckBox();
             this.cmbProdutos = new System.Windows.Forms.ComboBox();
             this.txtId = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.gpbOpcoes.SuspendLayout();
             this.toolStrip1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.errorPro)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.epErro)).BeginInit();
             this.SuspendLayout();
             // 
-            // cbAtivo
+            // cbStatus
             // 
-            this.cbAtivo.AutoSize = true;
-            this.cbAtivo.Location = new System.Drawing.Point(87, 206);
-            this.cbAtivo.Name = "cbAtivo";
-            this.cbAtivo.Size = new System.Drawing.Size(15, 14);
-            this.cbAtivo.TabIndex = 60;
-            this.cbAtivo.UseVisualStyleBackColor = true;
+            this.cbStatus.AutoSize = true;
+            this.cbStatus.Location = new System.Drawing.Point(87, 206);
+            this.cbStatus.Name = "cbStatus";
+            this.cbStatus.Size = new System.Drawing.Size(15, 14);
+            this.cbStatus.TabIndex = 60;
+            this.cbStatus.UseVisualStyleBackColor = true;
             // 
             // btnConsultar
             // 
@@ -233,9 +233,9 @@
             this.tsbtnVoltar.Text = "Voltar";
             this.tsbtnVoltar.Click += new System.EventHandler(this.tsbtnVoltar_Click);
             // 
-            // errorPro
+            // epErro
             // 
-            this.errorPro.ContainerControl = this;
+            this.epErro.ContainerControl = this;
             // 
             // cbCombo
             // 
@@ -288,7 +288,7 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.cbCombo);
             this.Controls.Add(this.cmbProdutos);
-            this.Controls.Add(this.cbAtivo);
+            this.Controls.Add(this.cbStatus);
             this.Controls.Add(this.btnConsultar);
             this.Controls.Add(this.txtEditar);
             this.Controls.Add(this.gpbOpcoes);
@@ -310,7 +310,7 @@
             this.gpbOpcoes.PerformLayout();
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.errorPro)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.epErro)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -318,7 +318,7 @@
 
         #endregion
 
-        private System.Windows.Forms.CheckBox cbAtivo;
+        private System.Windows.Forms.CheckBox cbStatus;
         private System.Windows.Forms.Button btnConsultar;
         private System.Windows.Forms.TextBox txtEditar;
         private System.Windows.Forms.GroupBox gpbOpcoes;
@@ -336,7 +336,7 @@
         private System.Windows.Forms.ToolStrip toolStrip1;
         public System.Windows.Forms.ToolStripButton tsbtnAlterar;
         public System.Windows.Forms.ToolStripButton tsbtnVoltar;
-        private System.Windows.Forms.ErrorProvider errorPro;
+        private System.Windows.Forms.ErrorProvider epErro;
         private System.Windows.Forms.CheckBox cbCombo;
         private System.Windows.Forms.ComboBox cmbProdutos;
         private System.Windows.Forms.TextBox txtId;

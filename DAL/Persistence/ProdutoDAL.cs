@@ -10,13 +10,13 @@ namespace DAL.Persistence
 {
     public class ProdutoDAL : DAL
     {
-        public bool Salvar(ProdutoDTO produto)
+        public bool Insert(ProdutoDTO produto)
         {
             try
             {
                 OpenConnection();
 
-                string strConn = "INSERT INTO Pessoa (Nome, Quantidade, Preco, Texto, FlagAtiva)" +
+                string strConn = "INSERT INTO Produto (Nome, Quantidade, Preco, Texto, FlagAtiva)" +
                                      "VALUES (@Nome, @Quantidade, @Preco, @Texto, @FlagAtiva)";
 
                 Cmd = new SqlCommand(strConn, Con);
@@ -35,24 +35,15 @@ namespace DAL.Persistence
             }
         }
 
-        public void ExcluirEditar(ProdutoDTO produto, string opcao)
+        public void Update(ProdutoDTO produto)
         {
             try
             {
                 OpenConnection();
 
-                string strConn = "";
-
-                if (opcao.ToLower() == "editar")
-                {
-                    strConn = @"UPDATE Produto set Nome = @Nome, Quantidade = @Quantidade, 
+                string strConn = @"UPDATE Produto set Nome = @Nome, Quantidade = @Quantidade, 
                                 Preco = @Preco, Texto = @Texto, FlagAtiva = @FlagAtiva,
                                 WHERE Id = @Id";
-                }
-                else
-                {
-                    strConn = @"DELETE from Produto WHERE IdProduto = @IdProduto";
-                }
 
                 Cmd = new SqlCommand(strConn, Con);
 

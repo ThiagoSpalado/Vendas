@@ -28,3 +28,8 @@ C:\VtexGit\Vendas\DAL\bin\Debug\DAL.pdb
 C:\VtexGit\Vendas\DAL\obj\Debug\DAL.csprojResolveAssemblyReference.cache
 C:\VtexGit\Vendas\DAL\obj\Debug\DAL.dll
 C:\VtexGit\Vendas\DAL\obj\Debug\DAL.pdb
+C:\Git\Vendas\DAL\bin\Debug\DAL.dll
+C:\Git\Vendas\DAL\bin\Debug\DAL.pdb
+C:\Git\Vendas\DAL\obj\Debug\DAL.csprojResolveAssemblyReference.cache
+C:\Git\Vendas\DAL\obj\Debug\DAL.dll
+C:\Git\Vendas\DAL\obj\Debug\DAL.pdb

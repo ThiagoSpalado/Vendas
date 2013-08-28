@@ -24,81 +24,42 @@ namespace Vendas.Produto
 
         private void tsbtnAlterar_Click(object sender, EventArgs e)
         {
-            bool camposValidados = true;
-
             try
             {
-                SqlConnection Con = new SqlConnection(@"Data Source=(LocalDB)\v11.0;AttachDbFilename=C:\Users\Thiago\Desktop\Thiago\Coti\Manager\Vendas\Banco.mdf;Integrated Security=True");
-
-                string strConn = @"UPDATE Produto set Nome = @Nome, Preco = @Preco, Quantidade = @Quantidade,
-                                    Texto = @Texto, FlagAtiva = @FlagAtiva  WHERE Id = @Id";
-
-                SqlCommand Cmd = new SqlCommand(strConn, Con);
+                ProdutoDAL objProdutoDAL = new ProdutoDAL();
+                ProdutoDTO objProduto = new ProdutoDTO();
+                bool camposValidados = true;
 
                 #region Validações dos Campos
 
-                if (!String.IsNullOrEmpty(txtNome.Text))
+                if (String.IsNullOrEmpty(txtNome.Text))
                 {
-                    Cmd.Parameters.AddWithValue("@Nome", txtNome.Text);
-                }
-                else
-                {
-                    errorPro.SetError(txtNome, "O campo Nome é obrigatório!");
+                    epErro.SetError(txtNome, "O campo Nome é obrigatório!");
                     camposValidados = false;
                 }
 
-                if (!String.IsNullOrEmpty(txtTexto.Text))
+                if (String.IsNullOrEmpty(txtPreco.Text))
                 {
-                    Cmd.Parameters.AddWithValue("@Texto", txtTexto.Text);
-                }
-                else
-                {
-                    errorPro.SetError(txtTexto, "O campo Texto é obrigatório!");
+                    epErro.SetError(txtPreco, "O campo Preco é obrigatório!");
                     camposValidados = false;
                 }
 
-                if (!String.IsNullOrEmpty(txtPreco.Text))
-                {
-                    Cmd.Parameters.AddWithValue("@Preco", txtPreco.Text);
-                }
-                else
-                {
-                    errorPro.SetError(txtPreco, "O campo Preco é obrigatório!");
-                    camposValidados = false;
-                }
-
-                if (!String.IsNullOrEmpty(txtQuantidade.Text))
-                {
-                    Cmd.Parameters.AddWithValue("@Quantidade", txtQuantidade.Text);
-                }
-                else
-                {
-                    errorPro.SetError(txtQuantidade, "O campo Quantidade é obrigatório!");
-                    camposValidados = false;
-                }
-
-                if (cbAtivo.Checked)
-                {
-                    Cmd.Parameters.AddWithValue("@FlagAtiva", 1);
-                }
-                else
-                {
-                    Cmd.Parameters.AddWithValue("@FlagAtiva", 0);
-                }
-
-                Cmd.Parameters.AddWithValue("@Id", txtId.Text);
                 #endregion
 
                 if (camposValidados)
                 {
-                    Con.Open();
-                    Cmd.ExecuteNonQuery();
-                    Con.Close();
+                    TransferirCampos(objProduto);
+                    objProdutoDAL.Update(objProduto);
 
-                    MessageBox.Show("Registro Alterado com sucesso!", "Mensagem", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("Registro inserido com sucesso!", "Mensagem", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                     LimparCampos();
-                    txtEditar.Focus();
+                    txtNome.Focus();
+                }
+                else
+                {
+                    MessageBox.Show("Ops, ocorreram erros!\n\nPreencha os campos e tente novamente",
+                        "Mensagem", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
             catch (Exception)
@@ -196,9 +157,9 @@ namespace Vendas.Produto
             txtTexto.Text = produto.Texto;
 
             if (produto.FlagAtiva.ToString().Replace("True", "Sim") == "Sim")
-                cbAtivo.Checked = true;
+                cbStatus.Checked = true;
             else
-                cbAtivo.Checked = false;
+                cbStatus.Checked = false;
         }
 
         private void LimparCampos()
@@ -207,11 +168,20 @@ namespace Vendas.Produto
             txtTexto.Text = string.Empty;
             txtPreco.Text = string.Empty;
             txtQuantidade.Text = string.Empty;
-            cbAtivo.Checked = false;
+            cbStatus.Checked = false;
             txtEditar.Text = string.Empty;
         }
-        
-        
+
+        private void TransferirCampos(ProdutoDTO produto)
+        {
+            produto.IdProduto = Convert.ToInt32(txtId.Text);
+            produto.Nome = txtNome.Text;
+            produto.Texto = txtTexto.Text;
+            produto.Preco = txtPreco.Text;
+            produto.Quantidade = Convert.ToInt32(txtQuantidade.Text);
+            produto.FlagAtiva = cbStatus.Checked;
+        }
+
         #endregion
 
         #region Rotina
