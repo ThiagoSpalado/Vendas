@@ -92,6 +92,10 @@ namespace DAL.Persistence
                 {
                     strConn = @"SELECT * from ViewVenda WHERE Cliente like @Cliente";
                 }
+                else if (opcao.ToLower() == "nome")
+                {
+                    strConn = @"SELECT * from ViewVenda WHERE Cliente like @Cliente";
+                }
                 else
                 {
                     return listVenda = GetAll();
@@ -184,6 +188,76 @@ namespace DAL.Persistence
 
                     listVenda.Add(objVenda);
                 }
+                return listVenda;
+            }
+            finally
+            {
+                CloseConnection();
+            }
+        }
+
+        public List<VendaDTO> GetByProduct(string produto)
+        {
+            List<VendaDTO> listVenda = new List<VendaDTO>();
+
+            try
+            {
+                OpenConnection();
+
+                string strConn;
+                List<string> codRef = new List<string>();
+
+                strConn = @"SELECT * from ViewDetalhe WHERE produto = @produto";
+
+                Cmd = new SqlCommand(strConn, Con);
+
+                Cmd.Parameters.AddWithValue("@produto", produto);
+                Dr = Cmd.ExecuteReader();
+
+                while (Dr.Read())
+                {
+                    codRef.Add(Dr["CodReferencia"].ToString());
+                }
+
+                if (codRef.Count > 0)
+                {
+                    CloseConnection();                    
+                }
+
+                for (int i = 0; i < codRef.Count; i++)
+                {
+                    if (codRef[i] == codRef[i+1])
+                    {
+                        continue;
+                    }
+
+                OpenConnection();
+
+                strConn = @"SELECT * from ViewVenda WHERE CodReferencia = @CodReferencia";
+
+                Cmd = new SqlCommand(strConn, Con);
+
+                Cmd.Parameters.AddWithValue("@CodReferencia", codRef[i]);
+                Dr = Cmd.ExecuteReader();
+
+                while (Dr.Read())
+                {
+                    VendaDTO objVenda = new VendaDTO();
+
+                    objVenda.Id = Convert.ToInt32(Dr["Id"]);
+                    objVenda.Cliente = Dr["Cliente"].ToString();
+                    objVenda.Data = Dr["Data"].ToString();
+                    objVenda.Total = Dr["Total"].ToString();
+                    objVenda.Status = Dr["Status"].ToString();
+
+                    listVenda.Add(objVenda);
+                }
+                CloseConnection();
+            }
+                return listVenda;
+            }
+            catch (Exception ex)
+            {
                 return listVenda;
             }
             finally

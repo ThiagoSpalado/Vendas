@@ -175,6 +175,48 @@ namespace DAL.Persistence
             }
         }
 
+        public List<PessoaDTO> GetAllActives()
+        {
+            List<PessoaDTO> listCliente = new List<PessoaDTO>();
+
+            try
+            {
+                OpenConnection();
+
+                string strConn = @"SELECT * from Cliente where FlagAtiva = 1";
+
+                Cmd = new SqlCommand(strConn, Con);
+
+                Dr = Cmd.ExecuteReader();
+
+                while (Dr.Read())
+                {
+                    PessoaDTO objCliente = new PessoaDTO();
+
+                    objCliente.IdPessoa = Convert.ToInt32(Dr["Id"]);
+                    objCliente.Nome = Dr["Nome"].ToString();
+                    objCliente.Endereco = Dr["Endereco"].ToString();
+                    objCliente.Bairro = Dr["Bairro"].ToString();
+                    objCliente.Estado = Dr["Estado"].ToString();
+                    objCliente.Cep = Dr["Cep"].ToString();
+                    objCliente.Telefone = Dr["Telefone"].ToString();
+                    objCliente.Telefone2 = Dr["Telefone2"].ToString();
+                    objCliente.Email = Dr["Email"].ToString();
+                    objCliente.Observacao = Dr["Observacao"].ToString();
+                    objCliente.FlagAtiva = Convert.ToBoolean(Dr["FlagAtiva"]);
+                    objCliente.FlagInadiplente = Convert.ToBoolean(Dr["FlagInadiplente"]);
+                    objCliente.Email = Dr["PCM"].ToString();
+
+                    listCliente.Add(objCliente);
+                }
+                return listCliente;
+            }
+            finally
+            {
+                CloseConnection();
+            }
+        }
+
         public PessoaDTO GetById(string id)
         {
             try

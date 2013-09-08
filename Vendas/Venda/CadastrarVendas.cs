@@ -116,7 +116,7 @@ namespace Vendas.Venda
         {
             try
             {
-                SqlConnection objConexao = new SqlConnection(@"Data Source=(LocalDB)\v11.0;AttachDbFilename=C:\Users\Thiago\Desktop\Thiago\Coti\Manager\Vendas\Banco.mdf;Integrated Security=True");
+                SqlConnection objConexao = new SqlConnection(@"Data Source=(LocalDB)\v11.0;AttachDbFilename=C:\Git\Vendas\Vendas\Banco.mdf;Integrated Security=True");
                 string strConn = "insert into compra(idcliente,data,total,codreferencia,Status)" +
                                     "values (@idcliente, @Data, @Total, @Codref, @Status)";
 
@@ -161,7 +161,7 @@ namespace Vendas.Venda
                 MessageBox.Show("Ops, ocorreram erros!\n\nPreencha os campos e tente novamente",
                         "Mensagem", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
-                SqlConnection objConexao = new SqlConnection(@"Data Source=(LocalDB)\v11.0;AttachDbFilename=C:\Users\Thiago\Desktop\Thiago\Coti\Manager\Vendas\Banco.mdf;Integrated Security=True");
+                SqlConnection objConexao = new SqlConnection(@"Data Source=(LocalDB)\v11.0;AttachDbFilename=C:\Git\Vendas\Vendas\Banco.mdf;Integrated Security=True");
                 string strDelete = "delete from compra where CodReferencia = @CodRef";
                 SqlCommand Cmd = new SqlCommand(strDelete, objConexao);
 
@@ -227,8 +227,8 @@ namespace Vendas.Venda
         {
             PessoaDAL objPessoaDAL = new PessoaDAL();
             ProdutoDAL objProdutoDAL = new ProdutoDAL();
-            List<PessoaDTO> lstPessoa = objPessoaDAL.GetAll();
-            List<ProdutoDTO> lstProduto = objProdutoDAL.GetAll();
+            List<PessoaDTO> lstPessoa = objPessoaDAL.GetAllActives();
+            List<ProdutoDTO> lstProduto = objProdutoDAL.GetAllActives();
 
             for (int i = 0; i < lstPessoa.Count; i++)
             {

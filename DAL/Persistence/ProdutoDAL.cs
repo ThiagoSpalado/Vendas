@@ -155,6 +155,41 @@ namespace DAL.Persistence
             }
         }
 
+        public List<ProdutoDTO> GetAllActives()
+        {
+            List<ProdutoDTO> listProduto = new List<ProdutoDTO>();
+
+            try
+            {
+                OpenConnection();
+
+                string strConn = @"SELECT * from Produto where FlagAtiva = 1";
+
+                Cmd = new SqlCommand(strConn, Con);
+
+                Dr = Cmd.ExecuteReader();
+
+                while (Dr.Read())
+                {
+                    ProdutoDTO objProduto = new ProdutoDTO();
+
+                    objProduto.IdProduto = Convert.ToInt32(Dr["Id"]);
+                    objProduto.Nome = Dr["Nome"].ToString();
+                    objProduto.Quantidade = Convert.ToInt32(Dr["Quantidade"]);
+                    objProduto.Texto = Dr["Texto"].ToString();
+                    objProduto.Preco = Dr["Preco"].ToString();
+                    objProduto.FlagAtiva = Convert.ToBoolean(Dr["FlagAtiva"]);
+
+                    listProduto.Add(objProduto);
+                }
+                return listProduto;
+            }
+            finally
+            {
+                CloseConnection();
+            }
+        }
+
         public ProdutoDTO GetById(string id)
         {
             try

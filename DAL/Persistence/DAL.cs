@@ -18,7 +18,7 @@ namespace DAL.Persistence
             //Data Source=(LocalDB)\v11.0;AttachDbFilename=T:\Thiago\Estudos\C#\Manager\Vendas\Banco.mdf;Integrated Security=True
             //Data Source=(LocalDB)\v11.0;AttachDbFilename=C:\Manager\Vendas\Banco.mdf;Integrated Security=True
             //Data Source=(LocalDB)\v11.0;AttachDbFilename=C:\Users\Thiago\Desktop\Thiago\Coti\Manager\Vendas\Banco.mdf;Integrated Security=True
-            Con = new SqlConnection(@"Data Source=(LocalDB)\v11.0;AttachDbFilename=C:\Users\Thiago\Desktop\Thiago\Coti\Manager\Vendas\Banco.mdf;Integrated Security=True");
+            Con = new SqlConnection(@"Data Source=(LocalDB)\v11.0;AttachDbFilename=C:\Git\Vendas\Vendas\Banco.mdf;Integrated Security=True");
             Con.Open();
         }
 

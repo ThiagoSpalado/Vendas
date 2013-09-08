@@ -84,9 +84,27 @@ namespace Vendas.Venda
                         objListCompra.Items.Add(objListViewItem);
                     }
                 }
-                else
+                else if (rbtnData.Checked)
                 {
                     listVenda = objVendaDAL.Buscar(txtConsulta.Text, "data");
+
+                    foreach (VendaDTO objVenda in listVenda)
+                    {
+                        //Instancio a classe ListViewItem e vou adicionando o item e subitens
+                        ListViewItem objListViewItem = new ListViewItem();
+
+                        objListViewItem.Text = objVenda.Id.ToString();
+                        objListViewItem.SubItems.Add(objVenda.Cliente.ToString());
+                        objListViewItem.SubItems.Add(objVenda.Data.ToString());
+                        objListViewItem.SubItems.Add(objVenda.Total.ToString());
+                        objListViewItem.SubItems.Add(objVenda.Status.ToString());
+
+                        objListCompra.Items.Add(objListViewItem);
+                    }
+                }
+                else
+                {
+                    listVenda = objVendaDAL.GetByProduct(txtConsulta.Text);
 
                     foreach (VendaDTO objVenda in listVenda)
                     {
@@ -147,7 +165,7 @@ namespace Vendas.Venda
         {
             try
             {
-                SqlConnection Con = new SqlConnection(@"Data Source=(LocalDB)\v11.0;AttachDbFilename=C:\Users\Thiago\Desktop\Thiago\Coti\Manager\Vendas\Banco.mdf;Integrated Security=True");
+                SqlConnection Con = new SqlConnection(@"Data Source=(LocalDB)\v11.0;AttachDbFilename=C:\Git\Vendas\Vendas\Banco.mdf;Integrated Security=True");
 
                 string strConn = @"UPDATE Compra set status = @status WHERE Id = @Id";
 
@@ -201,6 +219,15 @@ namespace Vendas.Venda
         private void txtCalendario_Click(object sender, EventArgs e)
         {
             monthCalendar1.Visible = !(monthCalendar1.Visible);
+        }
+
+        private void rbtnProduto_CheckedChanged(object sender, EventArgs e)
+        {
+            cboxPendente.Visible = true;
+            txtConsulta.Text = string.Empty;
+            txtConsulta.Visible = true;
+            monthCalendar1.Visible = false;
+            txtCalendario.Visible = false;
         }
     }
 }

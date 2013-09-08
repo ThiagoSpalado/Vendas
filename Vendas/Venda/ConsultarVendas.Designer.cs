@@ -38,6 +38,7 @@
             this.btnConsultar = new System.Windows.Forms.Button();
             this.txtConsulta = new System.Windows.Forms.TextBox();
             this.gpbOpcoes = new System.Windows.Forms.GroupBox();
+            this.rbtnProduto = new System.Windows.Forms.RadioButton();
             this.rbtnData = new System.Windows.Forms.RadioButton();
             this.rbtNome = new System.Windows.Forms.RadioButton();
             this.listVenda = new System.Windows.Forms.ListView();
@@ -152,6 +153,7 @@
             // 
             // gpbOpcoes
             // 
+            this.gpbOpcoes.Controls.Add(this.rbtnProduto);
             this.gpbOpcoes.Controls.Add(this.rbtnData);
             this.gpbOpcoes.Controls.Add(this.rbtNome);
             this.gpbOpcoes.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -165,11 +167,24 @@
             this.gpbOpcoes.TabStop = false;
             this.gpbOpcoes.Text = "Filtro:";
             // 
+            // rbtnProduto
+            // 
+            this.rbtnProduto.AutoSize = true;
+            this.rbtnProduto.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rbtnProduto.Location = new System.Drawing.Point(199, 35);
+            this.rbtnProduto.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+            this.rbtnProduto.Name = "rbtnProduto";
+            this.rbtnProduto.Size = new System.Drawing.Size(89, 23);
+            this.rbtnProduto.TabIndex = 6;
+            this.rbtnProduto.Text = "Produto";
+            this.rbtnProduto.UseVisualStyleBackColor = true;
+            this.rbtnProduto.CheckedChanged += new System.EventHandler(this.rbtnProduto_CheckedChanged);
+            // 
             // rbtnData
             // 
             this.rbtnData.AutoSize = true;
             this.rbtnData.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rbtnData.Location = new System.Drawing.Point(182, 35);
+            this.rbtnData.Location = new System.Drawing.Point(127, 35);
             this.rbtnData.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.rbtnData.Name = "rbtnData";
             this.rbtnData.Size = new System.Drawing.Size(62, 23);
@@ -377,5 +392,6 @@
         public System.Windows.Forms.ToolStripButton tsbtnVoltar;
         private System.Windows.Forms.MonthCalendar monthCalendar1;
         private System.Windows.Forms.Button txtCalendario;
+        private System.Windows.Forms.RadioButton rbtnProduto;
     }
 }
